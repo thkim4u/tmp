@@ -21,8 +21,6 @@ void TypingMachine::HomeKey() {
 }
 
 void TypingMachine::EndKey() {
-	// if (cursor == nullptr) return;
-
 	while (true) {
 		Node* ptr = cursor->GetNextNode();
 		if (ptr == nullptr) return;
@@ -32,8 +30,6 @@ void TypingMachine::EndKey() {
 }
 
 void TypingMachine::LeftKey() {
-	// if (cursor == nullptr) return;
-
 	Node* ptr = cursor->GetPreviousNode();
 	if (ptr == nullptr) return;
 
@@ -41,8 +37,6 @@ void TypingMachine::LeftKey() {
 }
 
 void TypingMachine::RightKey() {
-	// if (cursor == nullptr) return;
-
 	Node* ptr = cursor->GetNextNode();
 	if (ptr == nullptr) return;
 
@@ -61,23 +55,17 @@ bool TypingMachine::TypeKey(char key) {
 }
 
 bool TypingMachine::EraseKey() {
-	// if (cursor == nullptr) return false;
-
 	if (size == 0) return false;
 
 	if (cursor->ErasePreviousNode()) {
 		size--;
 		return true;
-
 	}
+
 	return false;
 }
 
-// #include <iostream>
-
 std::string TypingMachine::Print(char separator) {
-	// if (cursor == nullptr) return ret; 
-
 	std::string ret = "";
 
 	Node* head = cursor;
@@ -99,8 +87,6 @@ std::string TypingMachine::Print(char separator) {
 
 		head = head->GetNextNode();
 	}
-
-	// std::cout << "==>>" << ret << ": Size == " << size << std::endl;
 
 	return ret;
 }
