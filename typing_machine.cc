@@ -2,8 +2,10 @@
 
 #include "typing_machine.h"
 
+#define EOL '\0'
+
 TypingMachine::TypingMachine() {
-	cursor = new Node('\0');
+	cursor = new Node(EOL);
 	size = 0;
 	end = false;
 	return;
@@ -67,6 +69,8 @@ bool TypingMachine::EraseKey() {
 	return true;
 }
 
+#include <iostream>
+
 std::string TypingMachine::Print(char separator) {
 	// if (cursor == nullptr) return ret; 
 
@@ -83,14 +87,16 @@ std::string TypingMachine::Print(char separator) {
 
 	while (true) {
 		if (head == cursor) {
-			if (separator != '\0') ret.push_back(separator);
+			if (separator != 0) ret.push_back(separator);
 		}
-		if (head->GetData() == '\0') break;
+		if (head->GetData() == EOL) break;
 
 		ret.push_back(head->GetData());
 
 		head = head->GetNextNode();
 	}
+
+	std::cout << "==>>" << ret << ": Size == " << size << std::endl;
 
 	return ret;
 }
