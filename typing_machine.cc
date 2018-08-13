@@ -65,8 +65,12 @@ bool TypingMachine::EraseKey() {
 
 	if (size == 0) return false;
 
-	if (cursor->ErasePreviousNode()) size--;
-	return true;
+	if (cursor->ErasePreviousNode()) {
+		size--;
+		return true;
+
+	}
+	return false;
 }
 
 // #include <iostream>
