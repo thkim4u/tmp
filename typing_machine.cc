@@ -69,7 +69,7 @@ bool TypingMachine::EraseKey() {
 	return true;
 }
 
-#include <iostream>
+// #include <iostream>
 
 std::string TypingMachine::Print(char separator) {
 	// if (cursor == nullptr) return ret; 
@@ -96,7 +96,7 @@ std::string TypingMachine::Print(char separator) {
 		head = head->GetNextNode();
 	}
 
-	std::cout << "==>>" << ret << ": Size == " << size << std::endl;
+	// std::cout << "==>>" << ret << ": Size == " << size << std::endl;
 
 	return ret;
 }
