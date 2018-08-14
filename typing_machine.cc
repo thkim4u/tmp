@@ -1,5 +1,3 @@
-// Copyright 2018 <Author>
-
 #include "typing_machine.h"
 
 #define EOL '\0'

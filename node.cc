@@ -1,5 +1,3 @@
-// Copyright 2018 <Author>
-
 #include "node.h"
 
 Node::Node(char data) {
@@ -23,7 +21,7 @@ Node* Node::GetNextNode() {
 
 Node* Node::InsertPreviousNode(char data) {
 	Node* ptr = new Node(data);
-	
+
 	ptr->next = this;
 	ptr->prev = this->prev;
 	if (ptr->prev != nullptr) {
